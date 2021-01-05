@@ -45,7 +45,7 @@ export const building = async (config: Config, message: Message) => {
   const roles = await Promise.all(template.roles.map(async (role) => {
     const created = await roleManager.create({
       data: {
-        name: role.name,
+        name: `${buildName} - ${role.name}`,
       }
     });
 
